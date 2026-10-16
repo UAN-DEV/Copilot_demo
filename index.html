@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Copilot</title>
+  <title>Get In Touch</title>
   <link rel="stylesheet" href="./assets/style/_style.css">
+  <link rel="stylesheet" href="./assets/style/copilot_demo.css">
 </head>
 <body>
-  
+  <main class="contact-card">
+    <h1>Get In Touch</h1>
+    <form class="contact-form">
+      <div class="form-fields">
+        <input type="text" name="first-name" placeholder="First Name" aria-label="First Name" autocomplete="given-name" required>
+        <input type="text" name="last-name" placeholder="Last Name" aria-label="Last Name" autocomplete="family-name" required>
+        <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
+        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" autocomplete="tel">
+        <input class="address-field" type="text" name="address" placeholder="Address" aria-label="Address" autocomplete="street-address">
+        <textarea name="message" placeholder="Type your message here" aria-label="Message" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+      <p class="form-success">Thanks for submitting!</p>
+    </form>
+  </main>
 </body>
 </html>
