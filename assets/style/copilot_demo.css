@@ -29,7 +29,7 @@ body {
   gap: 20px;
 }
 
-.contact-form > :is(input, textarea) {
+.contact-form > :not(button) {
   min-width: 0;
   border: 0;
   border-radius: 10px;
@@ -43,6 +43,10 @@ body {
   flex: 0 0 calc((100% - 20px) / 2);
   height: 70px;
   background: #ebedff;
+}
+
+.contact-form > :is(input[name|="email"], input[name|="phone"]) {
+  background: #e3e6fc;
 }
 
 .contact-form > input[name|="address"] {
