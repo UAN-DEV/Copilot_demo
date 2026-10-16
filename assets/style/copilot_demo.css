@@ -1,7 +1,8 @@
 body {
-  display: grid;
+  display: flex;
   min-height: 100vh;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   padding: 40px 24px;
   background: #d9e9ff;
   color: #454fba;
@@ -22,15 +23,13 @@ body {
   line-height: 1.2;
 }
 
-.form-fields {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-.form-fields input,
-.form-fields textarea {
-  width: 100%;
+.contact-form > :is(input, textarea) {
   min-width: 0;
   border: 0;
   border-radius: 10px;
@@ -40,41 +39,36 @@ body {
   font-size: 18px;
 }
 
-.form-fields input {
-  height: 64px;
+.contact-form > :nth-child(-n + 4) {
+  flex: 0 0 calc((100% - 20px) / 2);
+  height: 70px;
   background: #ebedff;
 }
 
-.form-fields input:nth-child(3),
-.form-fields input:nth-child(4) {
-  background: #e3e6fc;
-}
-
-.form-fields .address-field {
-  grid-column: 1 / -1;
+.contact-form > input[name|="address"] {
+  flex-basis: 100%;
   height: 70px;
   background: #d4d9fa;
 }
 
-.form-fields textarea {
-  grid-column: 1 / -1;
+.contact-form > textarea[name|="message"] {
+  flex-basis: 100%;
   height: 100px;
   padding-top: 16px;
   resize: vertical;
   background: #b4baf3;
 }
 
-.form-fields input::placeholder,
-.form-fields textarea::placeholder {
+.contact-form > ::placeholder {
   color: #454fba;
   opacity: 1;
 }
 
-.contact-form button {
-  display: block;
+.contact-form > button {
+  flex: 0 0 180px;
   width: 180px;
   height: 60px;
-  margin: 34px auto 8px;
+  margin: 14px auto 8px;
   border: 0;
   border-radius: 999px;
   background: #3048ed;
@@ -83,11 +77,11 @@ body {
   font-size: 18px;
 }
 
-.contact-form button:hover {
+.contact-form > button:hover {
   background: #263bd0;
 }
 
-.contact-form button:focus-visible {
+.contact-form > button:focus-visible {
   outline: 3px solid #7484ff;
   outline-offset: 3px;
 }
@@ -112,13 +106,11 @@ body {
     font-size: 34px;
   }
 
-  .form-fields {
-    grid-template-columns: 1fr;
+  .contact-form {
     gap: 14px;
   }
 
-  .form-fields .address-field,
-  .form-fields textarea {
-    grid-column: auto;
+  .contact-form > :nth-child(-n + 4) {
+    flex: 0 0 100%;
   }
 }
